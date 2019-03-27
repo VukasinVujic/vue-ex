@@ -1,7 +1,8 @@
 <template>
   <div>
     <p>the safety stored number: {{ safelyStoredNumber }}</p>
-    <button @click="incrementStoredNumber">increment</button>
+    <button class="btn btn-info" @click="incrementStoredNumber">increment</button>
+    <input v-model="couter" @keyup.enter="setStoredNumber(couter)" type="text">
   </div>
 </template>
 
@@ -10,12 +11,13 @@ import { mapGetters, mapMutations } from "vuex";
 export default {
   data() {
     return {
-      count: 2
+      count: 0,
+      couter: 9
     };
   },
   methods: {
     increment() {
-      this.count * 5;
+      this.count++;
     },
     ...mapMutations(["incrementStoredNumber", "setStoredNumber"])
   },
