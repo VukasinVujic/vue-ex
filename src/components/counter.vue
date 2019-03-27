@@ -1,11 +1,12 @@
 <template>
   <div>
     <p>the safety stored number: {{ safelyStoredNumber }}</p>
+    <button @click="incrementStoredNumber">increment</button>
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapMutations } from "vuex";
 export default {
   data() {
     return {
@@ -15,7 +16,8 @@ export default {
   methods: {
     increment() {
       this.count++;
-    }
+    },
+    ...mapMutations(["incrementStoredNumber", "setStoredNumber"])
   },
   computed: {
     ...mapGetters(["safelyStoredNumber"])

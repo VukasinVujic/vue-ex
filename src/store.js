@@ -9,5 +9,15 @@ export const store = new Vuex.Store({
   },
   getters: {
     safelyStoredNumber: state => state.safelyStoredNumber
+  },
+
+  mutations: {
+    // mutacije u okviru samog statega menja stanje stateta
+    incrementStoredNumber(state) {
+      state.safelyStoredNumber++;
+    },
+    setStoredNumber(state, newNumber) {
+      state.safelyStoredNumber = newNumber;
+    }
   }
 });
