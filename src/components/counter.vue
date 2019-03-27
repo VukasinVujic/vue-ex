@@ -10,12 +10,12 @@ import { mapGetters, mapMutations } from "vuex";
 export default {
   data() {
     return {
-      count: 0
+      count: 2
     };
   },
   methods: {
     increment() {
-      this.count++;
+      this.count * 5;
     },
     ...mapMutations(["incrementStoredNumber", "setStoredNumber"])
   },
