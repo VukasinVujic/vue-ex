@@ -2,16 +2,19 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <counter></counter>
+    <second-file></second-file>
   </div>
 </template>
 
 <script>
 import counter from "./components/counter.vue";
+import secondFile from "./components/secondFile.vue";
 
 export default {
   name: "app",
   components: {
-    counter
+    counter,
+    secondFile
   }
 };
 </script>
